@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen or Stream — Theatrical Experience Scoring</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%231D9E75'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%235DCAA5' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E">
+  <meta name="description" content="We score every movie on how much it gains from being seen in a theater. Not every movie earns the big screen.">
+  <link rel="canonical" href="https://screenorstream.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://screenorstream.io/">
+  <meta property="og:site_name" content="Screen or Stream">
+  <meta property="og:title" content="Screen or Stream — Theatrical Experience Scoring">
+  <meta property="og:description" content="We score every movie on how much it gains from being seen in a theater. Not every movie earns the big screen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ScreenStreamHQ">
+  <meta name="twitter:title" content="Screen or Stream — Theatrical Experience Scoring">
+  <meta name="twitter:description" content="We score every movie on how much it gains from being seen in a theater. Not every movie earns the big screen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+  <!-- ══ INTRO SPLASH (shown once per session) ══ -->
+  <div id="intro-splash">
+    <div class="splash-dot"></div>
+    <div class="splash-wordmark">Screen or Stream</div>
+  </div>
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav>
+    <button class="nav-logo" id="homeBtn" title="Go home — Screen or Stream">
+      <div class="nav-logo-dot"></div>
+      <span class="nav-logo-text">Screen or Stream</span>
+    </button>
+
+    <div class="nav-links nav-links-main">
+      <button class="nav-text-btn" id="whyNavBtn">Why?</button>
+      <button class="nav-text-btn" id="mostAnticipatedNavBtn">Most Anticipated</button>
+      <button class="nav-text-btn" id="hofNavBtn">Hall of Fame</button>
+      <button class="nav-text-btn" id="howWeScoreNavBtn">How We Score</button>
+    </div>
+
+    <div class="nav-links" style="gap:12px;">
+      <a href="https://x.com/ScreenStreamHQ" target="_blank" class="nav-cta">Follow on X</a>
+      <button class="nav-cta" id="joinListBtn">Join the list</button>
+      <button class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button id="whyPageMobileBtn" class="mobile-link">Why?</button>
+    <button id="mostAnticipatedMobileBtn" class="mobile-link">Most Anticipated</button>
+    <button id="hofMobileBtn" class="mobile-link">Hall of Fame</button>
+    <button id="howWeScoreMobileBtn" class="mobile-link">How We Score</button>
+    <a href="https://x.com/ScreenStreamHQ" target="_blank" class="mobile-link">Follow on X</a>
+    <button class="nav-cta" id="joinListBtnMobile">Join the list</button>
+  </div>
+
+  <!-- ══ EMAIL MODAL ══ -->
+  <div class="modal" id="emailModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h3 class="modal-headline">Join the list</h3>
+      <p class="modal-sub">Sign up to be notified about new scores &amp; never miss a cinematic event again!</p>
+      <form class="modal-form" id="emailForm">
+        <input type="email" class="modal-input" placeholder="Enter your email" required id="emailInput">
+        <button type="submit" class="modal-submit">Sign me up</button>
+      </form>
+      <p style="font-size:12px;color:var(--very-muted);margin-top:20px;text-align:center;">We'll never spam you. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       WHY PAGE (overlay)
+  ══════════════════════════════════════════ -->
+  <div class="overlay-page" id="whyPage">
+    <div class="why-content">
+      <button class="overlay-back" id="whyBackBtn">← Back</button>
+
+      <div class="why-header">
+        <h2 class="why-title">Why Screen or Stream<span style="color:var(--teal)">?</span></h2>
+        <p class="why-intro">We solve a problem that shouldn't exist — but does. The disconnect between whether a movie is "good" and whether it's worth seeing in a theater.</p>
+      </div>
+
+      <div class="why-section">
+        <h2 class="why-section-title">The Gap in <span class="highlight">Every Rating Site</span></h2>
+        <p class="why-text">Rotten Tomatoes, IMDb, Metacritic — they're all answering the same question:</p>
+        <p class="why-text" style="font-weight:500;color:var(--white)">"Is this a good movie?"</p>
+        <p class="why-text">They score writing, acting, directing, overall quality. That's valuable. But it leaves a completely different question unanswered — the one you're actually asking when a new movie comes out:</p>
+        <ul class="why-list">
+          <li><strong>Is this worth seeing in theaters?</strong></li>
+          <li><strong>Should I pay for IMAX or Dolby?</strong></li>
+          <li><strong>Can this wait for streaming?</strong></li>
+          <li><strong>Will I experience something fundamentally different on the big screen?</strong></li>
+        </ul>
+        <div class="why-example">
+          <strong>The core insight:</strong> A "good movie" and a "great theatrical experience" are not always the same thing. Some films are masterpieces at home. Others become unforgettable only in a theater — because of scale, sound, visuals, crowd energy, and immersion. No existing platform tells you which is which.
+        </div>
+      </div>
+
+      <div class="why-section">
+        <h2 class="why-section-title">The Decision <span class="highlight">Nobody Helps You Make</span></h2>
+        <p class="why-text">Ticket prices are at all-time highs. Premium formats cost even more. Streaming is one click away. Theatrical windows keep shrinking. Every weekend you're making a calculation nobody gives you the data for.</p>
+        <p class="why-text" style="font-weight:500;color:var(--white);margin:20px 0">"Is this movie worth leaving my house for?"</p>
+        <div class="why-example">
+          You're scrolling a release calendar. Three movies are out this weekend. Which one actually <em>needs</em> the big screen? Which one will feel just as good on your couch in a month? Which one are you going to regret not seeing in IMAX? Right now, you're guessing. We're here to stop that.
+        </div>
+      </div>
+
+      <div class="why-section">
+        <h2 class="why-section-title">What Screen or Stream <span class="highlight">Actually Does</span></h2>
+        <p class="why-text">We're not replacing traditional reviews. We're answering a different question entirely.</p>
+        <div class="why-example" style="margin:24px 0">
+          A movie could be a 9/10 on Rotten Tomatoes — critically acclaimed, beautifully written — and score a 52/100 on Screen or Stream. Watch it at home. Conversely, a movie could be a 6/10 on Rotten Tomatoes — flawed, imperfect — and score a 91/100 on Screen or Stream. See it in IMAX, immediately.
+        </div>
+        <p class="why-text">Both scores are valid. They're just answering different questions.</p>
+        <p class="why-text">Our <strong>Theatrical Score™</strong> runs 0–100 and measures one thing: how much the theater elevates the experience. It's built from six weighted pillars — visual scale, audio design, cinematic experience, cultural momentum, narrative lens, and distribution dynamics — calculated from 60+ verified data points per film.</p>
+        <p class="why-text" style="margin-top:20px">
+          <button class="btn-ghost" id="whyToScoringBtn" style="font-size:14px;color:var(--teal);">
+            See exactly how we score →
+          </button>
+        </p>
+      </div>
+
+      <div class="why-section" style="border-bottom:none">
+        <p class="why-text">Movie theaters are at a crossroads. Streaming isn't going away. Ticket prices aren't coming down. But cinema is still magic — <em>if it's the right film in the right format</em>.</p>
+        <p class="why-text">Sometimes nothing beats a dark theater, a massive screen, and complete immersion.</p>
+        <p class="why-text">And sometimes, your couch is exactly where a movie should be watched.</p>
+        <p class="why-text" style="color:var(--white);font-weight:500;margin-top:24px">We're just here to tell you which is which.</p>
+      </div>
+
+      <div style="text-align:center;margin-top:60px;padding-top:40px;border-top:0.5px solid var(--border)">
+        <p style="font-size:14px;color:var(--muted);margin-bottom:16px">Questions? Feedback? Get in touch.</p>
+        <a href="https://x.com/ScreenStreamHQ" target="_blank" class="btn-primary">Follow us on X</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HOW WE SCORE PAGE (overlay)
+  ══════════════════════════════════════════ -->
+  <div class="overlay-page" id="scoringPage">
+    <div class="scoring-content">
+      <button class="overlay-back" id="scoringBackBtn">← Back</button>
+
+      <!-- Scoring Hero -->
+      <div class="scoring-hero">
+        <div class="scoring-eyebrow">Methodology</div>
+        <h2 class="scoring-title">The science behind<br>the <em>Theatrical Score™</em></h2>
+        <p class="scoring-sub">Not a review. Not an opinion. A data-driven index — 0 to 100 — measuring how essential each film is to experience on the big screen. Built from six weighted pillars, dozens of verified data points, and a modifier stack that captures the binary facts that change everything.</p>
+        <div class="scoring-stats">
+          <div><div class="stat-num">6</div><div class="stat-lbl">Scoring Pillars</div></div>
+          <div><div class="stat-num">60+</div><div class="stat-lbl">Core Data Points</div></div>
+          <div><div class="stat-num">8</div><div class="stat-lbl">Score Modifiers</div></div>
+          <div><div class="stat-num">~90%</div><div class="stat-lbl">Data Available Pre-Release</div></div>
+        </div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 01 — What is the Score -->
+      <div>
+        <div class="sec-label">01 — What is the score</div>
+        <div class="score-explainer">
+          <div class="score-dial-wrap">
+            <svg class="score-dial-svg" viewBox="0 0 240 240" aria-label="Example Theatrical Score dial">
+              <circle class="score-dial-ring-bg" cx="120" cy="120" r="96" stroke-dasharray="603" stroke-dashoffset="0"/>
+              <circle class="score-dial-ring" cx="120" cy="120" r="96"
+                stroke-dasharray="603" stroke-dashoffset="109"
+                transform="rotate(-90 120 120)"
+                style="filter: drop-shadow(0 0 8px rgba(29,158,117,0.5))"/>
+              <text class="score-dial-num" x="120" y="112" text-anchor="middle" dominant-baseline="middle">82</text>
+              <text class="score-dial-lbl" x="120" y="145" text-anchor="middle">THEATRICAL SCORE™</text>
+              <text style="font-family:'DM Mono',monospace;font-size:10px;fill:#777" x="120" y="162" text-anchor="middle">OUT OF 100</text>
+            </svg>
+
+            <div class="verdict-chips">
+              <button class="verdict-chip v-imax active-chip" onclick="setDialScore(92,'imax')">
+                <div class="verdict-chip-range">85–100</div>
+                <div>
+                  <div class="verdict-chip-name">Must-See IMAX</div>
+                  <div class="verdict-chip-desc">Engineered for premium large-format</div>
+                </div>
+              </button>
+              <button class="verdict-chip v-theater" onclick="setDialScore(70,'theater')">
+                <div class="verdict-chip-range">55–84</div>
+                <div>
+                  <div class="verdict-chip-name">See in Theaters</div>
+                  <div class="verdict-chip-desc">Cinema significantly enhances the film</div>
+                </div>
+              </button>
+              <button class="verdict-chip v-stream" onclick="setDialScore(32,'stream')">
+                <div class="verdict-chip-range">0–54</div>
+                <div>
+                  <div class="verdict-chip-name">Stream at Home</div>
+                  <div class="verdict-chip-desc">Home viewing captures the full experience</div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="score-right">
+            <div>
+              <div class="sec-title">One number.<br>One definitive answer.</div>
+              <p class="sec-body" style="margin-top:.75rem">The Theatrical Score™ runs 0–100. It answers a single question most review sites ignore entirely: <strong style="color:var(--white);font-weight:500">does this movie demand to be seen in a theater?</strong> Not whether it's good. Not whether you'll enjoy it. Whether the experience of watching it changes depending on where you watch it.</p>
+            </div>
+            <div class="info-box">
+              <h4>This is not a quality score</h4>
+              <p>A quiet, intimate drama can be a masterpiece and score a 28. A loud, visually spectacular sequel can score a 91. The score measures theatrical necessity — not cinematic merit. Both films deserve to exist. Only one demands a $20 ticket.</p>
+            </div>
+            <div class="info-box" style="border-left-color:var(--amber)">
+              <h4 style="color:#E8C43C">Click the thresholds to see the dial</h4>
+              <p>Each verdict tier has a defined score range. Tap any verdict above to see where it falls on the dial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 02 — The Formula -->
+      <div>
+        <div class="sec-label">02 — The formula</div>
+        <div class="pillars-intro">
+          <div><div class="sec-title">Six pillars.<br>One weighted composite.</div></div>
+          <div><p class="sec-body">Every Theatrical Score is the sum of six independently calculated pillar scores, each weighted by its relative impact on the actual theater experience. Weights were calibrated using a pairwise comparison matrix validated against 500 retrospective films.</p></div>
+        </div>
+
+        <div class="formula-block">
+          <div class="formula-label">// composite scoring formula</div>
+          <div class="formula-equation">
+            <span class="f-ts">TS</span>
+            <span class="f-op"> = (</span><span class="f-w">0.28</span><span class="f-op"> × </span><span class="f-v">V</span><span class="f-op">) + (</span><span class="f-w">0.22</span><span class="f-op"> × </span><span class="f-v">A</span><span class="f-op">) + (</span><span class="f-w">0.18</span><span class="f-op"> × </span><span class="f-v">CE</span><span class="f-op">) + (</span><span class="f-w">0.16</span><span class="f-op"> × </span><span class="f-v">CM</span><span class="f-op">) + (</span><span class="f-w">0.10</span><span class="f-op"> × </span><span class="f-v">N</span><span class="f-op">) + (</span><span class="f-w">0.06</span><span class="f-op"> × </span><span class="f-v">D</span><span class="f-op">)</span>
+            <br><span class="f-op">then apply </span><span class="f-v">modifier stack</span><span class="f-op"> [–15 to +12] → clamp [0, 100]</span>
+          </div>
+          <div class="formula-vars">
+            <div class="fvar-item"><span class="fvar-key">V</span><span class="fvar-name">Visual Scale (28%)</span></div>
+            <div class="fvar-item"><span class="fvar-key">A</span><span class="fvar-name">Audio Design (22%)</span></div>
+            <div class="fvar-item"><span class="fvar-key">CE</span><span class="fvar-name">Cinematic Experience (18%)</span></div>
+            <div class="fvar-item"><span class="fvar-key">CM</span><span class="fvar-name">Cultural Momentum (16%)</span></div>
+            <div class="fvar-item"><span class="fvar-key">N</span><span class="fvar-name">Narrative Lens (10%)</span></div>
+            <div class="fvar-item"><span class="fvar-key">D</span><span class="fvar-name">Distribution Dynamics (6%)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 03 — The Six Pillars -->
+      <div>
+        <div class="sec-label">03 — The six pillars</div>
+        <div style="margin-bottom:1rem">
+          <div class="sec-title">Click any pillar to dig in.</div>
+          <p class="sec-body">Each pillar is a cluster of individually scored data points. Every data point has a defined source and a 0–10 scoring rubric. Click to expand and see exactly what goes into each one.</p>
+        </div>
+        <div class="pillar-cards" id="pillar-cards"></div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 04 — Modifiers -->
+      <div>
+        <div class="sec-label">04 — Score modifiers</div>
+        <div class="pillars-intro">
+          <div><div class="sec-title">Binary facts that move the needle.</div></div>
+          <div><p class="sec-body">After the weighted composite is calculated, a modifier stack is applied. These aren't soft signals — they're hard, confirmable facts that fundamentally change the value proposition of a theater visit. Applied after the base score, then clamped to [0, 100].</p></div>
+        </div>
+
+        <div class="modifiers-grid">
+          <div class="mod-card"><div class="mod-delta pos">+12</div><div><div class="mod-type-badge">Format</div><div class="mod-name-text">Filmed natively in IMAX (not post-converted)</div></div></div>
+          <div class="mod-card"><div class="mod-delta pos">+8</div><div><div class="mod-type-badge">Event</div><div class="mod-name-text">Director confirmed theatrical-exclusive element (e.g. bonus scene, extended cut)</div></div></div>
+          <div class="mod-card"><div class="mod-delta pos">+6</div><div><div class="mod-type-badge">Cultural</div><div class="mod-name-text">Franchise finale or confirmed cultural milestone (algorithmically flagged)</div></div></div>
+          <div class="mod-card"><div class="mod-delta pos">+5</div><div><div class="mod-type-badge">Release</div><div class="mod-name-text">Theatrical-only window confirmed ≥ 90 days before streaming</div></div></div>
+          <div class="mod-card"><div class="mod-delta pos">+4</div><div><div class="mod-type-badge">Legacy</div><div class="mod-name-text">Director's prior 3 films average Theatrical Score ≥ 80</div></div></div>
+          <div class="mod-card"><div class="mod-delta neg">–5</div><div><div class="mod-type-badge">Format</div><div class="mod-name-text">Post-converted to IMAX or 3D (upscale only, not native)</div></div></div>
+          <div class="mod-card"><div class="mod-delta neg">–8</div><div><div class="mod-type-badge">Access</div><div class="mod-name-text">Limited release — fewer than 500 screens (US)</div></div></div>
+          <div class="mod-card"><div class="mod-delta neg">–10</div><div><div class="mod-type-badge">Release</div><div class="mod-name-text">Day-and-date streaming release (theatrical and streaming simultaneous)</div></div></div>
+        </div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 05 — Confidence -->
+      <div>
+        <div class="sec-label">05 — Confidence &amp; transparency</div>
+        <div class="confidence-section">
+          <div class="sec-title" style="font-size:1.5rem">We show our work — including what we don't know yet.</div>
+
+          <div class="confidence-grid">
+            <div>
+              <div class="conf-bar-label">Opening day score (high confidence)</div>
+              <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+                <div class="conf-score-display">81</div>
+                <div class="conf-band">± 2</div>
+              </div>
+              <div class="conf-bar-track"><div class="conf-bar-fill" style="width:95%"></div></div>
+              <div class="conf-desc" style="margin-top:10px">Nearly all Core data points confirmed. Score is stable. Enhanced data may shift by ±2 as post-release information comes in.</div>
+            </div>
+
+            <div>
+              <div class="conf-bar-label">Pre-release score (moderate confidence)</div>
+              <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+                <div class="conf-score-display">74</div>
+                <div class="conf-band">± 6</div>
+              </div>
+              <div class="conf-bar-track"><div class="conf-bar-fill" style="width:62%"></div></div>
+              <div class="conf-desc" style="margin-top:10px">Core data mostly available. Format specs and exhibition details unconfirmed. Score will sharpen as release approaches and data locks in.</div>
+            </div>
+          </div>
+
+          <div class="transparency-strip">
+            <div class="ts-icon">◎</div>
+            <div>
+              <div class="ts-title">Every score is a model, not a verdict handed down from authority</div>
+              <div class="ts-text">Each data input, its source, its weight, and the scoring rubric used to turn raw data into a 0–10 value is documented and accessible. When we don't have a data point, we use a genre/budget-tier baseline and flag it — we never silently fill gaps. When new confirmed data arrives, scores update and the change is logged. This is how weather forecasting works: publish the model, show confidence, update as data arrives. We hold ourselves to the same standard.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scoring-divider"></div>
+
+      <!-- 06 — Data Availability -->
+      <div>
+        <div class="sec-label">06 — Data availability</div>
+        <div class="pillars-intro">
+          <div><div class="sec-title">Core data vs.<br>Enhanced data.</div></div>
+          <div><p class="sec-body">Not all data is available before a film opens. We split every data point into two tiers: Core data (always used, required for any published score) and Enhanced data (supplemental signals that refine precision when available). The Core Score is always valid on its own.</p></div>
+        </div>
+
+        <div class="data-tiers-grid">
+          <div class="data-tier-card">
+            <div class="data-tier-header">
+              <div class="data-tier-dot" style="background:var(--teal)"></div>
+              <div class="data-tier-name">Core Score</div>
+              <div class="data-tier-badge badge-core">Always used</div>
+            </div>
+            <p class="data-tier-text">A locked, uniform set of data points obtained for every wide theatrical release. The same inputs, the same rubric, every film. This is what makes scores comparable across movies and years. ~90% of Core data points are confirmed before opening day.</p>
+          </div>
+          <div class="data-tier-card">
+            <div class="data-tier-header">
+              <div class="data-tier-dot" style="background:#378ADD"></div>
+              <div class="data-tier-name">Enhanced Score</div>
+              <div class="data-tier-badge badge-enhanced">When available</div>
+            </div>
+            <p class="data-tier-text">Supplemental data points that add precision when available — post-screening reports, edit analysis, director interviews, audience reaction data. When Enhanced data arrives, the score updates and the revision is logged. The ± band narrows.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:60px 0 20px;border-top:0.5px solid var(--border);margin-top:60px">
+        <p style="font-size:14px;color:var(--muted);margin-bottom:16px">Follow every score as it drops.</p>
+        <a href="https://x.com/ScreenStreamHQ" target="_blank" class="btn-primary">Follow @ScreenStreamHQ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HALL OF FAME PAGE (overlay)
+  ══════════════════════════════════════════ -->
+  <div class="overlay-page" id="hofPage">
+    <div class="hof-content">
+      <button class="overlay-back" id="hofBackBtn">← Back</button>
+
+      <div class="hof-header">
+        <div class="hof-eyebrow">Theatrical Score™ Archive</div>
+        <h2 class="hof-title">Hall of <strong>Fame</strong></h2>
+        <p class="hof-sub">The highest Theatrical Scores™ of each year — ranked by how essential they were to experience on the big screen, not how good they were. Scores calculated retroactively using the full SoS methodology.</p>
+      </div>
+
+      <!-- Year selector -->
+      <div class="hof-year-strip" id="hofYearStrip"></div>
+
+      <!-- Year panels (injected by JS) -->
+      <div id="hofPanels"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       MOST ANTICIPATED PAGE (overlay)
+  ══════════════════════════════════════════ -->
+  <div class="overlay-page" id="anticipatedPage">
+    <div class="hof-content">
+      <button class="overlay-back" id="anticipatedBackBtn">← Back</button>
+
+      <div class="hof-header">
+        <div class="hof-eyebrow">Pre-Release Projections — 2026</div>
+        <h2 class="hof-title">Most <strong>Anticipated</strong></h2>
+        <p class="hof-sub">The 10 films of 2026 most likely to score highest on our Theatrical Score™ — ranked by projected SOS score based on confirmed data points available before release. Scores are projections, not finals. Click any card to see the scoring rationale.</p>
+      </div>
+
+      <div class="hof-grid" id="anticipatedGrid"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HIGHEST SCORES OF 2026 PAGE (overlay)
+  ══════════════════════════════════════════ -->
+  <div class="overlay-page" id="scoresPage">
+    <div class="hof-content">
+      <button class="overlay-back" id="scoresBackBtn">← Back</button>
+
+      <div class="hof-header">
+        <div class="hof-eyebrow">Theatrical Score™ Rankings — 2026</div>
+        <h2 class="hof-title">Highest <strong>Scores of 2026</strong></h2>
+        <p class="hof-sub">Every film of 2026 ranked by Theatrical Score™ — how essential each was to experience on the big screen. Click any card to expand the full scoring breakdown.</p>
+      </div>
+
+      <div class="hof-grid" id="allScoresGrid"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-headline">Know before<br>you <span class="outline">go</span></h1>
+    <p class="hero-sub">Not every movie needs the big screen. We tell you the ones that do.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" id="whyHeroBtn">Learn why</button>
+    </div>
+  </section>
+
+  <!-- CAROUSEL EXPAND MODAL -->
+  <div class="carousel-modal" id="carouselModal">
+    <div class="carousel-modal-card" id="carouselModalCard">
+      <button class="cm-close" id="carouselModalClose">×</button>
+      <div id="carouselModalContent"></div>
+    </div>
+  </div>
+
+  <!-- CAROUSEL -->
+  <section id="carousel-container">
+    <div class="section-header fade-up" style="margin-bottom:32px;max-width:1200px;margin-left:auto;margin-right:auto;">
+      <div>
+        <h2 class="section-title">Hall of Fame</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:6px">Check out the greatest theater moments over the years.</p>
+      </div>
+      <button class="btn-ghost" id="carouselHofBtn" style="flex-shrink:0">
+        View Hall of Fame
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M6 12l4-4-4-4" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <!-- Top film rail -->
+    <div class="film-rail film-rail-top" id="filmRailTop">
+      <div class="film-rail-inner" id="filmRailTopInner"></div>
+    </div>
+
+    <div class="carousel-track-wrap fade-up" style="margin:0 -40px;">
+      <div class="carousel-track" id="carouselTrack"></div>
+    </div>
+
+    <!-- Bottom film rail -->
+    <div class="film-rail film-rail-bottom" id="filmRailBottom">
+      <div class="film-rail-inner" id="filmRailBottomInner"></div>
+    </div>
+  </section>
+
+  <!-- HOW WE SCORE PREVIEW -->
+  <section id="how-we-score-preview" style="border-bottom: 0.5px solid var(--border); padding-top: 32px;">
+    <div style="max-width:1200px;margin:0 auto;">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;" class="hws-preview-grid fade-up">
+
+        <!-- LEFT: hook copy -->
+        <div>
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;">The Methodology</div>
+          <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;letter-spacing:-1px;line-height:1.15;margin-bottom:16px;color:var(--white)">Not opinion.<br>Not vibes.<br><span style="color:transparent;-webkit-text-stroke:1px var(--teal)">Pure data.</span></h2>
+          <p style="font-size:14px;font-weight:300;color:var(--muted);line-height:1.75;max-width:380px;margin-bottom:28px;">Every Theatrical Score™ is built from six weighted pillars, 60+ verified data points, and a modifier stack. The same inputs, every film — so scores are always comparable.</p>
+          <button class="btn-ghost" id="hwsPreviewBtn">
+            See how we score
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M6 12l4-4-4-4" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+
+        <!-- RIGHT: visual data preview -->
+        <div style="display:flex;flex-direction:column;gap:10px;">
+
+          <!-- Formula strip -->
+          <div style="background:var(--surface2);border:0.5px solid var(--border2);border-radius:8px;padding:14px 16px;font-family:var(--mono);font-size:11px;color:var(--very-muted);line-height:1.8;">
+            <span style="color:var(--very-muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:6px;">// composite formula</span>
+            <span style="color:var(--teal-light);font-size:13px;font-weight:500;">TS</span>
+            <span style="color:var(--very-muted)"> = </span>
+            <span style="color:#E8593C">0.28</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">V</span>
+            <span style="color:var(--very-muted)"> + </span>
+            <span style="color:#E8593C">0.22</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">A</span>
+            <span style="color:var(--very-muted)"> + </span>
+            <span style="color:#E8593C">0.18</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">CE</span>
+            <span style="color:var(--very-muted)"> + </span>
+            <span style="color:#E8593C">0.16</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">CM</span>
+            <span style="color:var(--very-muted)"> + </span>
+            <span style="color:#E8593C">0.10</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">N</span>
+            <span style="color:var(--very-muted)"> + </span>
+            <span style="color:#E8593C">0.06</span><span style="color:var(--very-muted)">×</span><span style="color:var(--teal-light)">D</span>
+          </div>
+
+          <!-- Six pillars -->
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <!-- V -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">V</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:28%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Visual Scale</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">28%</span>
+            </div>
+            <!-- A -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">A</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:22%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Audio Design</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">22%</span>
+            </div>
+            <!-- CE -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">CE</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:18%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Cin. Experience</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">18%</span>
+            </div>
+            <!-- CM -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">CM</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:16%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Cultural Momentum</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">16%</span>
+            </div>
+            <!-- N -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">N</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:10%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Narrative Lens</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">10%</span>
+            </div>
+            <!-- D -->
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;flex-shrink:0;letter-spacing:.05em;">D</span>
+              <div style="flex:1;height:3px;background:rgba(255,255,255,0.05);border-radius:2px;overflow:hidden;">
+                <div style="width:6%;height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal-light));border-radius:2px;"></div>
+              </div>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--muted);width:72px;flex-shrink:0;">Distribution</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--teal);width:28px;text-align:right;flex-shrink:0;">6%</span>
+            </div>
+          </div>
+
+          <!-- Stats row -->
+          <div style="display:flex;gap:8px;margin-top:4px;">
+            <div style="flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:6px;padding:10px 12px;text-align:center;">
+              <div style="font-family:var(--mono);font-size:18px;color:var(--teal-light);font-weight:400;line-height:1;">6</div>
+              <div style="font-family:var(--mono);font-size:8px;color:var(--very-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;">Pillars</div>
+            </div>
+            <div style="flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:6px;padding:10px 12px;text-align:center;">
+              <div style="font-family:var(--mono);font-size:18px;color:var(--teal-light);font-weight:400;line-height:1;">60+</div>
+              <div style="font-family:var(--mono);font-size:8px;color:var(--very-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;">Data Points</div>
+            </div>
+            <div style="flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:6px;padding:10px 12px;text-align:center;">
+              <div style="font-family:var(--mono);font-size:18px;color:var(--teal-light);font-weight:400;line-height:1;">8</div>
+              <div style="font-family:var(--mono);font-size:8px;color:var(--very-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;">Modifiers</div>
+            </div>
+            <div style="flex:1;background:var(--surface2);border:0.5px solid var(--border2);border-radius:6px;padding:10px 12px;text-align:center;">
+              <div style="font-family:var(--mono);font-size:18px;color:var(--teal-light);font-weight:400;line-height:1;">~90%</div>
+              <div style="font-family:var(--mono);font-size:8px;color:var(--very-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;">Pre-Release</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHEST SCORES OF 2026 — 3-card preview -->
+  <section id="scores">
+    <div class="section-header fade-up">
+      <h2 class="section-title">Highest Scores of 2026</h2>
+      <button class="btn-ghost" id="allScoresBtn" style="font-size:13px;color:var(--muted);">All scores →</button>
+    </div>
+    <div class="preview-scroll-wrap">
+      <div class="hof-grid fade-up" id="latestScoresGrid" style="max-width:1200px;margin:0 auto;"></div>
+    </div>
+  </section>
+
+  <!-- UPCOMING — 3-card preview, links to Most Anticipated overlay -->
+  <section id="upcoming">
+    <div class="section-header fade-up">
+      <h2 class="section-title">Most Anticipated — 2026</h2>
+      <button class="btn-ghost" id="allAnticipatedBtn" style="font-size:13px;color:var(--muted);">All upcoming →</button>
+    </div>
+    <div class="preview-scroll-wrap">
+      <div class="hof-grid fade-up" id="anticipatedPreviewGrid" style="max-width:1200px;margin:0 auto;"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE SECTION -->
+  <section id="quote">
+    <p id="quote-text"></p>
+    <p id="quote-author"></p>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <h2>Follow every score<br>as it <span class="outline">drops.</span></h2>
+    <p>Pre-release scores, trailer breakdowns, and format recommendations — all on X before release weekend.</p>
+    <div class="cta-actions">
+      <a href="https://x.com/ScreenStreamHQ" target="_blank" class="btn-primary">Follow @ScreenStreamHQ</a>
+      <button class="btn-ghost" id="howWeScoreCTABtn">
+        How we score
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M6 12l4-4-4-4" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">screenorstream.io</div>
+    <div class="footer-links">
+      <a href="#upcoming">Upcoming</a>
+      <button id="footerHowWeScoreBtn">How We Score</button>
+      <button id="footerWhyBtn">Why?</button>
+      <a href="https://x.com/ScreenStreamHQ" target="_blank">X / Twitter</a>
+    </div>
+    <div class="footer-copy">© 2025 Screen or Stream</div>
+  </footer>
+
+      <script src="/assets/site.js" defer></script>
+</body>
+</html>
